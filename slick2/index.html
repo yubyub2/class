@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="slick">
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/10/24/lPtgK4wuwOop6FTBi6gJ8pufTCgKO7J9_648.jpg" alt="이미지1">
+                </div>
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/10/24/wSiahiJRsweWRPsepD9z0leZroer4LrH_648.jpg" alt="이미지2">
+                </div>
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/10/27/mCvWrWgjHV2KD29Uc0H0sbqcnJxcn46k_648.jpg" alt="이미지3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+    <!-- -> 제이쿼리 연결한거니까 이 사이에는 뭔가 적으면 X -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slick').slick({
+                //setting-name: setting-value
+                autoplay:true,
+                dots:true, /* -> 페이지네이션 */
+            });
+        });
+    </script>
+
+</body>
+
+</html>

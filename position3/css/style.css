@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;} /*-> 내가 예측하지 못한 공간 다 없애기 */
+ul,ol,li{list-style: none;}
+
+.clear::after{content: ""; clear: both; display: block;}
+#전체{
+    background-color: coral;
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;}
+#전체 .첫째자식{
+    background-color: bisque;
+    position: relative;
+    padding: 20px;}
+#전체 .첫째자식 .첫째손자{
+    background-color: cornsilk;
+    height: 200px;
+    background-image: url(../img/img1.jpg);
+    background-size: cover;
+    background-position: center;}
+#전체 .첫째자식 .wrap{
+    position: relative;
+    }
+
+#전체 .첫째자식 .첫손2{
+    background-color: rgb(102, 158, 102);
+    opacity: 0; /* 투명도 */
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    background-image: url(../img/img2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#전체 .첫째자식:hover .첫손2{
+    opacity: 1;
+    transition: 0.3s;
+}
+
+#전체 .둘째자식{
+    background-color: rgb(250, 225, 157);
+    margin-top: 30px;
+    height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+#전체 .둘째자식 .둘째손자{
+    background-color: #FFFBAC;
+    /* height: 100%; 
+    width: 100%;  -> 안적어도 기본값! 블록요소이기때문에 */
+    /* 자식은 부모의 padding에 침범하지 못한다 */
+    position: absolute;
+    left: 0; top: 0;
+    right: 0;bottom: 0;
+    width: 200px;
+    height: 100px;
+    /* -> 위에것처럼 하는거나 height: 100%; width: 100%;하는거나 똑같
+    알아서 인식안함 */
+}
+
+#전체 .둘째자식{
+    margin-bottom: 50px;
+}
+/* margin은 위아래 둘 중에 큰 값을 따른다
+둘째자식 아래 50 셋째자식 위로 30이면 둘째자식을 따른다 */
+#전체 .셋째자식{
+    margin-top: 30px;
+    background-color: #E1D7C6;
+}
+#전체 .셋째자식>div{
+    background-color: #F8F4EA;
+    width: 40%;
+    margin: 0 5%;
+    float: left;
+}
+
+/* ol이나 ul의 자식요소는 li만 가능하다 */
+#전체 .셋째자식>div ol{
+    list-style-type: decimal;
+}
+#전체 .셋째자식>div ul{
+    list-style: circle;
+}
+#전체 .셋째자식>div li{
+    border: 1px solid gray;
+}
+#전체 .넷째자식{
+    background-color: #FAF8F1;
+    margin-top: 30px;
+    padding: 20px;
+}
+#전체 .넷째자식 .넷째손자{
+    background-color: azure;
+}
+#전체 .넷째자식 .넷째손자 dt{
+    background-color: #F4EAD5;
+}
+#전체 .넷째자식 .넷째손자 dd{
+    background-color: #E8F3D6;
+}

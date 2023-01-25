@@ -1,0 +1,106 @@
+*{margin: 0; padding: 0;}
+.치료::after{content: ""; clear: both; display: block;}
+
+
+
+.박일수{
+    background-color:#F8EDE3;
+    width: 1000px;
+    margin: 0 auto; /* -> 상하는 0, 좌우는 오토 -> 가운데로 정렬 */
+
+    padding: 20px;/*  상하좌우 */
+    padding: 20px, 20px; /* 상하, 좌우 */
+    padding: 20px, 20px, 20px; /* 상, 하, 좌우 */
+    padding: 10px, 20px, 30px, 40px; /* 상, 우, 하, 좌 */
+}
+.박일수 .박첫째{
+    background-color: #DFD3C3;
+    padding: 20px;}
+.박일수 .박첫째 .자식{
+    width: 49%;
+    height: 200px;
+    float: left;
+    }
+.박일수 .박첫째 .자식.첫째자식1{
+    background-color: #FAEAB1;
+    margin-right: 2%;
+    padding: 20px;
+    border: 5px solid red;
+    /* width + padding + border를 영역안으로 포함 ↓ */
+    box-sizing: border-box;/*  -> 패딩의 공간을 박스 안에서만 할 수 있게
+*/} 
+.박일수 .박첫째 .자식.첫째자식2{
+    background-color: #E5BA73;
+}
+.박일수 .박첫째 .자식.첫째자식2 object{
+    width: 100%;
+    height: 100%;}
+.박일수 .박둘째{background-color: #D0B8A8;
+    padding: 20px;
+    margin-top: 30px;
+}
+/* 띄어쓰기 -> 자손 / > -> 바로밑에 자식 부르는거 */
+.박일수 .박둘째>div{
+    background-color: antiquewhite;
+    float: left;
+    height: 100px;
+    width: 23.5%;
+    margin-right: 2%;
+}
+.박일수 .박둘째>div.둘자식1{
+    background-image: url(toy3.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position:50px, 50px; /* x축,  Y축 */
+    transition: 0.3s;
+
+}.박일수 .박둘째>div.둘자식1:hover{
+    background-size: 100px;
+    background-position: center center;
+
+    background-image: url(toy3.png);
+}
+.박일수 .박둘째>div.둘자식2{
+    background: #FFB26B url(toy5.png) no-repeat 40px 40px/20px;
+    background-size: 120px;
+    background-position: 40px, 40px; 
+    transition: 0.3s;
+}
+.박일수 .박둘째>div.둘자식2:hover{
+    background-image: url(toy6.png);
+}
+.박일수 .박둘째>div.둘자식3{
+    overflow: hidden; /* -> 내 영역보다 넘치는거 숨김 */
+}
+.박일수 .박둘째>div.둘자식3 iframe{
+    width: 100%;
+    height: 100%;
+}
+.박일수 .박둘째>div.둘자식4{
+    margin-right: 0;
+    overflow: hidden;
+}
+.박일수 .박둘째>div.둘자식4 iframe{
+    width: 100%;
+}
+.박일수 .박셋째{
+    background-color: #6b696a80;
+    margin-top: 30px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    text-align: center;    
+    line-height: 200px;
+}
+.박일수 .박셋째>div{
+    background-color: rgb(122, 113, 117);
+    width: 32%;
+    margin-right: 2%;
+    height: 200px;
+    float: left;
+}
+.박일수 .박셋째>div.세자식1{}
+.박일수 .박셋째>div.세자식2{}
+.박일수 .박셋째>div.세자식3{
+    margin-right: 0; /* -> 세자식 3은 오른쪽에 여백을 줄 필요가 없으니까 0으로  */
+}

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+*{margin:0; padding: 0;}
+.치료::after{content: ""; clear: both; display: block;}
+
+.전체{
+    position: relative;
+    background-color: gray;
+    width: 600px;
+    border: 5px solid #000;
+    margin-left: 100px;
+    margin-top: 200px;
+}
+.전체>div{
+    width:150px;
+    height: 150px;
+}
+.전체 .pink{
+    background-color: pink;
+    position: static; /* -> 기본값, 움직이라해도 안움직임 */
+    left: 50px; /* -> 적용안됨 */}
+.전체 .green{
+    background-color: green;
+    position: relative;
+/*     원래 자신의 위치를 기억
+    주위에 아무런 영향을 주지 X 
+    left, top의 기준은 원래 자신의 위치*/
+    left: 250px; top: 50px;} 
+/*     -> 나의 왼쪽/탑이 부모로부터(원래위치)얼마나 떨어지냐를 적는것!  */
+.전체 .red{
+    background-color: red;
+    position: absolute;
+/*     -> 유령이 됨! 부모가 자식을 인지하지 못해서 크기가 줄어든다! 반드시 누구한테는 달라 붙어야함 
+       하지만 우리 눈에는 보임!  
+       원래가진 자신의 영역을 까먹음! 조상을 기준으로 삼는데 조상이 기준이 되기위해서는 조상의 position이 relative, absolute, fixed이면 기준이 될 수 있다*/
+    left: 100px; top: 100px;}
+.전체 .blue{
+    position: fixed; 
+    /* -> 화면에 붙어버림~ 화면을 올리든 내리든! 
+    윈도우기준으로 배치*/
+    right: 0; top: 100px;
+    background-color: blue;}
+
+.영역{margin-top: 50px;
+background-color: gray;
+border: 5px solid #000;
+width: 1000px;
+margin: 50px 0 auto;
+padding: 20px;
+box-sizing: border-box;}
+
+.영역>div{
+    background-color: green;
+    width: 49%;
+    float: left;
+    height: 300px;
+}
+.영역>div.포지션1{
+    margin-right: 2%;
+    position: relative;
+    overflow: hidden;
+}
+.영역>div.포지션1 .포자{
+    width: 0%;
+    height: 0%;
+    background-color: pink;
+    position: absolute;
+    left: 50%; top: 50%;
+    /* transform: translate(x축, y축); %의 기준이 자신  */
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+}
+.영역>div.포지션1:hover .포자{
+    width: 120%;
+    height: 120%;
+}
+
+.space{
+    height: 2000px;
+}

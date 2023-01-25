@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+*{margin: 0;padding: 0;}
+:root{
+    /* --(하이픈2개)속성이름:속성값 */
+    --green:#0f0;
+    --padding-top10:10px;
+    --padding-bottom:10px
+}
+.전체{font-size: 1.2em;
+/* 16px * 1.2 
+em이란 내가 갖고있는 폰트사이즈에 곱해서 계산하는것*/}
+.전체 .첫째{font-size: 0.5em;}
+.전체 .첫째 .첫손{
+    color: var(--green);
+    background-color: blue;
+    height: 100vh; /* -> vh 뷰포트의 높이를 다 차지해라 */
+   /*  font-size: 30vw; */ /* -> vw 뷰포트의 넓이의 30만 차지해라 */
+   font-size: 0.3rem;
+   /* r은  root를 말하는데 html에서 root는 html요소를 의미 
+   html의 기본 폰트크기는 16px이므로 16px을 기준으로 계산*/
+   font-size: 30vw;
+   padding-top: var(--padding-top10);
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모자식관계</title>
+    <style>
+        /* * = 모든요소 */
+        /*         
+         부모는 자식의 높이를 따라감
+         자식은 부모의 넓이를 따라감
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .전체 {
+            width: 600px;
+            /*넓이값 */
+            background-color: aqua;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 영역을 가운데 정렬 */
+        .전체 {
+            border: red solid 2px;
+        }
+
+        .전체 {
+            background-color: green;
+        }
+
+        /* 위에 똑같은 전체를 잡아서 적어도 아래쪽으로 갈수록 힘이 더 세진다 */
+
+        .전체 .첫째 {
+            background-color: pink;
+        }
+
+        .전체 .둘째 {
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+
+        .전체 .둘째 .둘자1 {
+            float: right;
+            background-color: azure;
+            width: 33.3333%;
+        }
+        .전체 .둘째 .둘자2 {
+            float: right;
+            background-color: burlywood;
+            width: 33.3333%;
+        }
+        .전체 .둘째 .둘자3 {
+            float: right;
+            background-color: darksalmon;
+            width: 33.3333%;
+        }
+        .전체 .둘째 .효자{
+        /* 부모의 깨짐영역 방지(float를 하면 부모가 자식을 못알아보기때문=영역깨짐현상) */
+            clear: both;
+        }
+        .전체 .셋째{
+            background-color: bisque;
+            padding: 20px;
+            margin-top: 50px;}
+        .전체 .셋째::after{ 
+            /* CLEAR:both;는 블록요소에서만 효능이 발휘된다.
+            BEFORE:: AFTER::는 인라인요소이다. */
+            content: ""; clear: both; display: block;
+            }
+        .전체 .셋째 .세자1{
+            background-color: aquamarine;
+            width: 50%;
+            float: left;}
+        .전체 .셋째 .세자1 span{
+            background-color: cadetblue;}
+        .전체 .셋째 .세자1 span::before{
+            /* CSS에서 공간을 만들 수 있다 */
+            content: "앞";/* <-- 요거 없으면 화면에 안나타남
+            (콘텐트랑 비포애프터는 짝궁) 가상으로 공간을 만들어줌*/
+        }
+        .전체 .셋째 .세자1 span::after{
+            /* CSS에서 공간을 만들 수 있다 */
+            content: "뒤";/* <-- 요거 없으면 화면에 안나타남 */
+        }
+
+        
+        
+        
+        
+        .전체 .셋째 .세자2{
+            width: 50%;
+            background-color: darkgray;
+            float: left;}
+        .전체 .셋째 .세자2 span{
+            background-color: gold;}
+    </style>
+</head>
+
+<body>
+    <div class="전체">
+        <div class="첫째">첫째</div>
+        <!-- 첫째 -->
+        <div class="둘째">
+            <div class="둘자1">둘째자식1</div>
+            <div class="둘자2">둘째자식2</div>
+            <div class="둘자3">둘째자식3</div>
+            <div class="효자"></div>
+        </div><!-- 둘째 -->
+        <div class="셋째">
+            <div class="세자 세자1"><span>셋째</span>자식1</div>
+            <div class="세자 세자2"><span>셋째</span>자식2</div>
+        </div><!-- 셋째 -->
+    </div><!-- 전체 -->
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.wrap{
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgb(224, 220, 220);
+    padding: 200px 0;
+    margin-top: 50px;
+}
+.wrap>div{
+    height: 300px;
+    background-color: whitesmoke;
+    border-top: 1px solid #222;
+}
+.wrap>div+div{
+    margin-top: 200px;}
+    /* -> 내 위에 형제가 있는데 div인 것들만!
+    맨 위에거는 제외된다는 말이다! section1만 제외되는 것  */
+
+.wrap .section2 div{
+    margin-top: 50px;
+}
+/* -> 위와 아래쪽에는 병합현상이 생긴다. */
